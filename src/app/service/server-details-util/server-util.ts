@@ -21,8 +21,8 @@ export class ServerUtilService {
       CLIENT_SECRET: 'secret',
       CLIENT_SCOPE: 'openid',
       RESPONSE_TYPE: 'code',
-      URL: 'http://localhost:8080',
-      CLIENT_REDIRECT_URI: 'http://127.0.0.1:4200',
+      URL: 'https://authorization-server-dxji.onrender.com',
+      CLIENT_REDIRECT_URI: 'https:employee-management-pi-nine.vercel.app',
       CODE_CHALLENGE: 'QYPAZ5NU8yvtlQ9erXrUYR-T5AGCjCF47vN-KsaI2A8',
       CODE_CHALLENGE_METHOD: 'S256',
       GRANT_TYPE: 'authorization_code',
@@ -34,7 +34,7 @@ export class ServerUtilService {
 
   getServerUrl() {
     const url = {
-      RESOURCE: 'http://localhost:9000/api',
+      RESOURCE: 'https://resource-server-m43g.onrender.com/api',
       AUTHORIZATION_CODE: `${
         this.getAuthServer().URL
       }/oauth2/authorize?response_type=${
