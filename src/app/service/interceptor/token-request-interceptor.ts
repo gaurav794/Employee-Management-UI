@@ -6,12 +6,14 @@ import {
   HttpHeaders,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { auth_server } from 'src/environments/environment';
 import { Buffer } from 'buffer';
 import { Injectable } from '@angular/core';
+import { ServerUtilService } from '../server-details-util/server-util';
 
 @Injectable({ providedIn: 'root' })
 export class TokenRequestInterceptor implements HttpInterceptor {
+  constructor(private server: ServerUtilService) {}
+
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler
@@ -27,7 +29,9 @@ export class TokenRequestInterceptor implements HttpInterceptor {
       const BASIC_AUTH =
         `Basic ` +
         Buffer.from(
-          `${auth_server.CLIENT_ID}:${auth_server.CLIENT_SECRET}`
+          `${this.server.getAuthServer().CLIENT_ID}:${
+            this.server.getAuthServer().CLIENT_SECRET
+          }`
         ).toString('base64');
       //headers
       const headers = new HttpHeaders({

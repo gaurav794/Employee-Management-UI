@@ -13,7 +13,7 @@ import { EmployeeManagementService } from 'src/app/service/employee-management/e
 import { RestApiResponseUtil } from 'src/app/service/http-response-util/rest-api-response-util';
 import { ToastService } from 'src/app/service/toast/toast.service';
 import { FormValidatorService } from '../../util/form-validator-service/form-validator.service';
-import { environment } from 'src/environments/environment';
+import { ServerUtilService } from 'src/app/service/server-details-util/server-util';
 
 @Component({
   selector: 'app-login',
@@ -29,12 +29,13 @@ export class LoginComponent implements OnInit {
     private util: FormValidatorService,
     private employeeManagementService: EmployeeManagementService,
     private router: Router,
-    private toastService: ToastService
+    private toastService: ToastService,
+    private server: ServerUtilService
   ) {}
 
   ngOnInit(): void {
     //Redirects to  Authorization Server Login Page
-    window.location.href = environment.AUTHORIZATION_CODE_URL;
+    window.location.href = this.server.getServerUrl().AUTHORIZATION_CODE;
 
     // this.page_heading = 'Login';
     // this.loginForm = this.fb.group({

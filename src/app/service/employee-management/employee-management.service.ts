@@ -11,14 +11,15 @@ import { catchError, throwError } from 'rxjs';
 import { RestResponseStatus } from '../../interface/rest-response-status';
 import { Payroll } from '../../interface/payroll';
 import { UserRole } from '../../interface/user-role';
+import { ServerUtilService } from '../server-details-util/server-util';
 
 @Injectable({
   providedIn: 'root',
 })
 export class EmployeeManagementService {
-  url: string = environment.RESOURCE_SERVER_URL;
+  url: string = this.server.getServerUrl().RESOURCE;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private server: ServerUtilService) {}
 
   loginUser(user: UserRole) {
     return this.http.get<RestResponseStatus>(`${this.url}/login`, {
@@ -26,7 +27,6 @@ export class EmployeeManagementService {
     });
   }
 
-  //TODO: Register Api would have restrictions so .. figure it out
   registerUser(user: UserRole) {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
