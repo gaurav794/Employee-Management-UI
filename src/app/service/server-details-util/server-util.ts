@@ -22,7 +22,7 @@ export class ServerUtilService {
       CLIENT_SCOPE: 'openid',
       RESPONSE_TYPE: 'code',
       URL: 'https://authorization-server-dxji.onrender.com',
-      CLIENT_REDIRECT_URI: 'https:employee-management-pi-nine.vercel.app',
+      CLIENT_REDIRECT_URI: 'https://employee-management-pi-nine.vercel.app',
       CODE_CHALLENGE: 'QYPAZ5NU8yvtlQ9erXrUYR-T5AGCjCF47vN-KsaI2A8',
       CODE_CHALLENGE_METHOD: 'S256',
       GRANT_TYPE: 'authorization_code',
