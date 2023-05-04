@@ -1,0 +1,16 @@
+<div class="dash-main main">
+  <!-- Logout Button -->
+  <app-logout></app-logout>
+
+  <div class="dash-head head">
+    <!-- Page Heading  -->
+    <app-page-heading [heading]="page_heading"></app-page-heading>
+  </div>
+
+  <div class="dash-items row">
+    <a class="dash-item" routerLink="/add-emp">Add Employee</a>
+    <a class="dash-item" routerLink="/emp-summary">Employee Summary</a>
+    <a class="dash-item" routerLink="/g-pr">Generate Payroll</a>
+    <a class="dash-item" routerLink="/pr-summary">Payroll Summary</a>
+  </div>
+</div>

@@ -1,0 +1,210 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.head {
+  width: 100%;
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+textarea,
+select {
+  padding: 5px;
+}
+
+.validation {
+  color: #db0000;
+  padding-left: 4px;
+  font-size: 14px;
+}
+
+.date-label {
+  padding-left: 0.2rem;
+  font-size: 0.9rem;
+}
+
+input,
+textarea,
+select,
+.btn-container,
+.util-btn-container,
+.login-signup-link {
+  margin: 5px 0;
+}
+
+input,
+textarea,
+select {
+  border: none;
+  background: rgb(164 162 162);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgb(255, 255, 255);
+}
+
+/* Change color of calendar icon */
+input[type="date"] {
+  color-scheme: normal;
+  cursor: pointer;
+}
+
+.btn-container,
+.login-signup-link {
+  display: flex;
+  justify-content: space-around;
+}
+
+.util-btn-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-container > button {
+  padding: 2px;
+  width: 10rem;
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
+.progress-bar-container {
+  width: 80%;
+  margin: 30%;
+}
+
+.table {
+  overflow-x: auto;
+  overflow-y: auto;
+  animation: animate 1s ease-in;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0%;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+.summary-back-btn {
+  display: flex;
+  justify-content: flex-end;
+  width: 79%;
+  margin-bottom: 5px;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+.btn,
+button {
+  padding: 5px 25px;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  color: white;
+  text-decoration: none;
+}
+
+.table {
+  width: 80%;
+}
+
+table {
+  font-size: 14px;
+  border-spacing: 1px;
+  text-align: left;
+  color: #e3e3e3;
+}
+
+tr {
+  border: 0;
+}
+
+th,
+td {
+  width: 12%;
+  padding: 10px;
+}
+
+th:first-child {
+  border-top-left-radius: 5px;
+}
+
+th:last-child {
+  border-top-right-radius: 5px;
+}
+
+tr:last-child > td:first-child {
+  border-bottom-left-radius: 5px;
+}
+
+tr:last-child > td:last-child {
+  border-bottom-right-radius: 5px;
+}
+
+/* Responsive BreakPoints*/
+/* Mobile */
+@media only screen and (min-width: 411px) and (min-height: 731px) {
+  .container {
+    background: rgba(221, 221, 221, 0.5);
+    margin: 4%;
+    min-height: 95vh;
+    max-width: 92%;
+  }
+}
+/* Tablet */
+@media only screen and (min-width: 768px) and (min-height: 1024px) {
+  .container {
+    margin: 3%;
+    max-width: 93%;
+  }
+}
+/* Laptop */
+@media only screen and (min-width: 1366px) and (min-height: 768px) {
+  .container {
+    margin: 1%;
+    max-width: 98%;
+  }
+}
+/* Laptop */
+@media only screen and (min-width: 1920px) and (min-height: 1080px) {
+  .container {
+    margin: 2rem;
+    min-height: 94vh;
+    max-width: 96%;
+  }
+}

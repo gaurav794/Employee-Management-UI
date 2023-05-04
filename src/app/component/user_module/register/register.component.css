@@ -1,0 +1,49 @@
+.head {
+  margin-top: 4rem;
+}
+
+.register-btn {
+  padding: 5px;
+  background: rgb(65, 164, 29);
+}
+
+.clear-btn {
+  background: rgb(55, 183, 252);
+}
+
+/* Responsive BreakPoints */
+@media only screen and (min-width: 576px) {
+  .register-main {
+    padding-top: 3rem;
+  }
+
+  .btn-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+
+  .btn {
+    margin-top: 2rem;
+    margin: 0.3rem;
+    padding: 0.5rem;
+  }
+  .register-btn,
+  .clear-btn {
+    width: -webkit-fill-available;
+    width: -moz-available;
+  }
+
+  .validation {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 992px) {
+}
+
+@media only screen and (min-width: 1200px) {
+}

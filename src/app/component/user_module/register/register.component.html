@@ -1,0 +1,55 @@
+<div class="register-main main">
+    <div class="register-head head">
+        <!-- Page Heading  -->
+        <app-page-heading [heading]="page_heading"></app-page-heading>
+    </div>
+
+    <div class="form-section">
+        <form class="form" (ngSubmit)="onRegister()" [formGroup]=registerForm>
+            <input id="user_name" type="text" placeholder="Full Name" formControlName="user_name">
+            <div class="validation"
+                *ngIf="(registerFormControl['user_name']?.invalid && registerFormControl['user_name']?.touched) || registerFormControl['user_name']?.dirty">
+                <div *ngIf="registerFormControl['user_name'].errors?.['required']">Full Name is required</div>
+            </div>
+            <input id="email" type="email" placeholder="Email" formControlName="email_id">
+            <div class="validation"
+                *ngIf="(registerFormControl['email_id']?.invalid && registerFormControl['email_id']?.touched) || registerFormControl['email_id']?.dirty">
+                <div *ngIf="registerFormControl['email_id'].errors?.['required']">Email is required</div>
+                <div *ngIf="registerFormControl['email_id'].errors?.['pattern']">Enter a valid email address</div>
+            </div>
+            <input id="phone" type="text" placeholder="Phone Number" formControlName="phone_number">
+            <div class="validation"
+                *ngIf="(registerFormControl['phone_number']?.invalid && registerFormControl['phone_number']?.touched) || registerFormControl['phone_number']?.dirty">
+                <div *ngIf="registerFormControl['phone_number'].errors?.['required']">Phone Number is required</div>
+                <div *ngIf="registerFormControl['phone_number'].errors?.['lessDigit']">Phone Number must be 10 digits
+                </div>
+            </div>
+            <input id="pass" type="password" placeholder="Password" formControlName="password">
+            <div class="validation"
+                *ngIf="(registerFormControl['password']?.invalid && registerFormControl['password']?.touched) || registerFormControl['password']?.dirty">
+                <div *ngIf="registerFormControl['password'].errors?.['required']">Password is required</div>
+                <div *ngIf="registerFormControl['password'].errors?.['lessLength']">Password length should be greater
+                    than
+                    8</div>
+                <div *ngIf="registerFormControl['password'].errors?.['greaterLength']">Password length should be less
+                    than
+                    15</div>
+            </div>
+            <input id="confirmpass" type="password" placeholder="Confirm Password" formControlName="confirmPassword">
+            <div class="validation"
+                *ngIf="(registerFormControl['confirmPassword']?.invalid && registerFormControl['confirmPassword']?.touched) || registerFormControl['confirmPassword']?.dirty">
+                <div *ngIf="registerFormControl['confirmPassword'].errors?.['required']">Confirm Password is required
+                </div>
+                <div *ngIf="registerFormControl['confirmPassword'].errors?.['isMatch']">Passwords do not match</div>
+            </div>
+             <!-- buttons -->
+             <div class="btn-container">
+                <button class="btn register-btn" type="submit">Register</button>
+                <button class="btn clear-btn" type="reset">Clear</button>
+            </div>
+        </form>
+        <div class="login-signup-link">
+            <a routerLink="/login">Already have an account? Login here</a>
+        </div>
+    </div>
+</div>

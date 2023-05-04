@@ -1,0 +1,44 @@
+<div class="employee-summary-main main">
+  <!-- Logout Button -->
+  <app-logout></app-logout>
+  <div class="employee-summary-head head">
+    <!-- Page Heading  -->
+    <app-page-heading [heading]="page_heading"></app-page-heading>
+  </div>
+  <div class="employee-summary-back-btn">
+    <a class="btn back-btn" routerLink="/">Back</a>
+  </div>
+  <div class="summary">
+    <!-- Progress Bar -->
+    <div class="progress-bar-container" *ngIf="!isLoaded">
+      <app-progress-bar></app-progress-bar>
+    </div>
+    <div *ngIf="isLoaded" class="table">
+      <table>
+        <tr>
+          <th>Sr. No</th>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Phone Number</th>
+          <th>Position</th>
+          <th>Daily Wage</th>
+          <th>Date Of Joining</th>
+          <th>Last Day</th>
+          <th>Date Added</th>
+        </tr>
+        <!-- For Loop -->
+        <tr *ngFor="let employee of employees; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.address }}</td>
+          <td>{{ employee.phone_number }}</td>
+          <td>{{ employee.designation }}</td>
+          <td>{{ employee.daily_wage }}</td>
+          <td>{{ employee.doj }}</td>
+          <td>{{ employee.last_day }}</td>
+          <td>{{ employee.date_added }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

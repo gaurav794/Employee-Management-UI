@@ -1,0 +1,149 @@
+<div class="employee-main main">
+  <div class="employee-head head">
+    <!-- Logout Button -->
+    <app-logout></app-logout>
+    <!-- Page Heading  -->
+    <app-page-heading [heading]="page_heading"></app-page-heading>
+  </div>
+  <div class="form-section">
+    <form class="form" (ngSubmit)="addEmployee()" [formGroup]="employeeForm">
+      <input
+        id="pid"
+        type="text"
+        placeholder="Personal Identification Number"
+        formControlName="pid"
+      />
+      <div
+        class="validation"
+        *ngIf="
+          (EmployeeFormControl['pid']?.invalid &&
+            EmployeeFormControl['pid']?.touched) ||
+          EmployeeFormControl['pid']?.dirty
+        "
+      >
+        <div *ngIf="EmployeeFormControl['pid'].errors?.['required']">
+          PID is required
+        </div>
+      </div>
+      <input
+        id="name"
+        type="text"
+        placeholder="Full Name"
+        formControlName="name"
+      />
+      <div
+        class="validation"
+        *ngIf="
+          (EmployeeFormControl['name']?.invalid &&
+            EmployeeFormControl['name']?.touched) ||
+          EmployeeFormControl['name']?.dirty
+        "
+      >
+        <div *ngIf="EmployeeFormControl['name'].errors?.['required']">
+          Name is required
+        </div>
+      </div>
+      <textarea
+        id="address"
+        placeholder="Address"
+        rows="3"
+        cols="5"
+        formControlName="address"
+      ></textarea>
+      <div
+        class="validation"
+        *ngIf="
+          (EmployeeFormControl['address']?.invalid &&
+            EmployeeFormControl['address']?.touched) ||
+          EmployeeFormControl['address']?.dirty
+        "
+      >
+        <div *ngIf="EmployeeFormControl['address'].errors?.['required']">
+          Address is required
+        </div>
+      </div>
+      <input
+        id="phone"
+        type="text"
+        placeholder="Phone Number"
+        formControlName="phone_number"
+      />
+      <div
+        class="validation"
+        *ngIf="
+          (EmployeeFormControl['phone_number']?.invalid &&
+            EmployeeFormControl['phone_number']?.touched) ||
+          EmployeeFormControl['phone_number']?.dirty
+        "
+      >
+        <div *ngIf="EmployeeFormControl['phone_number'].errors?.['required']">
+          Phone Number is required
+        </div>
+        <div *ngIf="EmployeeFormControl['phone_number'].errors?.['lessDigit']">
+          Phone Number must be 10 digits
+        </div>
+      </div>
+      <select id="designation" formControlName="designation">
+        <option ngValue="" selected disabled hidden>Select Designation</option>
+        <option *ngFor="let desig of designations" value="{{ desig }}">
+          {{ desig }}
+        </option>
+      </select>
+      <div
+        class="validation"
+        *ngIf="
+          (EmployeeFormControl['designation']?.invalid &&
+            EmployeeFormControl['designation']?.touched) ||
+          EmployeeFormControl['designation']?.dirty
+        "
+      >
+        <div *ngIf="EmployeeFormControl['designation'].errors?.['required']">
+          Designation is required
+        </div>
+      </div>
+      <input
+        id="daily_wage"
+        type="text"
+        placeholder="Daily Wage"
+        formControlName="daily_wage"
+      />
+      <div
+        class="validation"
+        *ngIf="
+          (EmployeeFormControl['daily_wage']?.invalid &&
+            EmployeeFormControl['daily_wage']?.touched) ||
+          EmployeeFormControl['daily_wage']?.dirty
+        "
+      >
+        <div *ngIf="EmployeeFormControl['daily_wage'].errors?.['required']">
+          Daily Wage is required
+        </div>
+      </div>
+      <label class="date-label" for="doj">Date of Joining:</label>
+      <input
+        id="doj"
+        type="date"
+        placeholder="Date of Joining"
+        formControlName="doj"
+      />
+      <div
+        class="validation"
+        *ngIf="
+          (EmployeeFormControl['doj']?.invalid &&
+            EmployeeFormControl['doj']?.touched) ||
+          EmployeeFormControl['doj']?.dirty
+        "
+      >
+        <div *ngIf="EmployeeFormControl['doj'].errors?.['required']">
+          Date of Joining is required
+        </div>
+      </div>
+
+      <div class="util-btn-container">
+        <button class="btn add-btn" type="submit">Add</button>
+        <button class="btn clear-btn" type="reset">Clear</button>
+        <a class="btn close-btn" routerLink="/">Close</a>
+      </div>
+    </form>
+  </div>
+</div>

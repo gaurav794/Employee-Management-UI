@@ -1,0 +1,77 @@
+.login-btn {
+  padding: 5px;
+  background: rgb(65, 164, 29);
+}
+
+.head {
+  margin-top: 4rem;
+}
+
+/* Responsive BreakPoints */
+@media only screen and (min-width: 576px) {
+  .btn-container {
+    margin-top: 2rem;
+  }
+
+  .login-main {
+    padding-top: 5rem;
+  }
+
+  .login-btn {
+    width: -webkit-fill-available;
+    width: -moz-available;
+    padding: 0.5rem;
+  }
+
+  .validation {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  input {
+    padding: 10px;
+    font-size: large;
+  }
+  .login-btn {
+    padding: 0.6rem;
+    font-size: 16px;
+  }
+  a {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  input {
+    padding: 12px;
+    font-size: larger;
+  }
+  .login-btn {
+    padding: 0.7rem;
+    font-size: 18px;
+  }
+  a {
+    font-size: 19px;
+  }
+  .form {
+    width: 450px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  input {
+    padding: 13px;
+    font-size: x-large;
+  }
+  .login-btn {
+    padding: 0.8rem;
+    font-size: 19px;
+  }
+  a {
+    font-size: 22px;
+  }
+  .form {
+    width: 600px;
+  }
+}

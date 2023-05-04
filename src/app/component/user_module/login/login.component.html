@@ -1,0 +1,61 @@
+<!-- <div class="login-main main">
+  <div class="login-head head">
+    <app-page-heading [heading]="page_heading"></app-page-heading>
+  </div>
+
+  <div class="form-section">
+    <form class="form" (ngSubmit)="onLogin()" [formGroup]="loginForm">
+      <input
+        id="email"
+        type="text"
+        placeholder="Email"
+        formControlName="email_id"
+      />
+      <div
+        class="validation"
+        *ngIf="
+          (loginFormControl['email_id']?.invalid &&
+            loginFormControl['email_id']?.touched) ||
+          loginFormControl['email_id']?.dirty
+        "
+      >
+        <div *ngIf="loginFormControl['email_id'].errors?.['required']">
+          Email is required
+        </div>
+        <div *ngIf="loginFormControl['email_id'].errors?.['pattern']">
+          Enter a valid email address
+        </div>
+      </div>
+      <input
+        id="pass"
+        type="password"
+        placeholder="Password"
+        formControlName="password"
+      />
+      <div
+        class="validation"
+        *ngIf="
+          (loginFormControl['password']?.invalid &&
+            loginFormControl['password']?.touched) ||
+          loginFormControl['password']?.dirty
+        "
+      >
+        <div *ngIf="loginFormControl['password'].errors?.['required']">
+          Password is required
+        </div>
+        <div *ngIf="loginFormControl['password'].errors?.['lessLength']">
+          Password length should be greater than 8
+        </div>
+        <div *ngIf="loginFormControl['password'].errors?.['greaterLength']">
+          Password length should be less than 15
+        </div>
+      </div>
+      <div class="btn-container">
+        <button class="btn login-btn" type="submit">Login</button>
+      </div>
+    </form>
+    <div class="login-signup-link">
+      <a routerLink="/signup">Don't have an account? Signup here</a>
+    </div>
+  </div>
+</div> -->

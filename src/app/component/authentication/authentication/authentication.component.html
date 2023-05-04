@@ -1,0 +1,9 @@
+<!-- Progress Bar -->
+<div class="progress-bar">
+  <app-progress-bar
+    [progress_bar_type]="progress_bar_type"
+    [progress_bar_value]="progress_bar_value"
+  ></app-progress-bar>
+  <p *ngIf="!isUserLoggedIn">AUTHENTICATING USER ...</p>
+  <p class="success" *ngIf="isUserLoggedIn">USER AUTHENTICATED</p>
+</div>

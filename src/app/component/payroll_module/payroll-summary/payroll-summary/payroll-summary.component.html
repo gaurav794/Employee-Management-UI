@@ -1,0 +1,48 @@
+<div class="payroll-summary-main main">
+  <!-- Logout Button -->
+  <app-logout></app-logout>
+  <div class="payroll-summary-head head">
+    <!-- Page Heading  -->
+    <app-page-heading [heading]="page_heading"></app-page-heading>
+  </div>
+  <div class="payroll-summary-back-btn">
+    <a class="btn back-btn" routerLink="/">Back</a>
+  </div>
+  <div class="summary">
+    <!-- Progress Bar -->
+    <div class="progress-bar-container" *ngIf="!isLoaded">
+      <app-progress-bar></app-progress-bar>
+    </div>
+    <div *ngIf="isLoaded" class="table">
+      <table>
+        <tr>
+          <th>Sr. No</th>
+          <th>Payroll ID</th>
+          <th>Payroll Month</th>
+          <th>Payroll Year</th>
+          <th>Attendance</th>
+          <th>Daily Wage</th>
+          <th>Generated Salary</th>
+          <th>Deductions</th>
+          <th>Net Pay</th>
+          <th>Payment Mode</th>
+          <th>Date Added</th>
+        </tr>
+        <!-- For Loop -->
+        <tr *ngFor="let payroll of payrolls; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ payroll.payroll_id }}</td>
+          <td>{{ payroll.payroll_month }}</td>
+          <td>{{ payroll.payroll_year }}</td>
+          <td>{{ payroll.attendance }}</td>
+          <td>{{ payroll.daily_wage }}</td>
+          <td>{{ payroll.generated_salary }}</td>
+          <td>{{ payroll.deductions }}</td>
+          <td>{{ payroll.net_pay }}</td>
+          <td>{{ payroll.payment_mode }}</td>
+          <td>{{ payroll.date_added }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

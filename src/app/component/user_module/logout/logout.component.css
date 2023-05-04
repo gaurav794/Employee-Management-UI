@@ -1,0 +1,50 @@
+.logout {
+  position: absolute;
+}
+
+.logout > .logout-btn {
+  background-color: rgb(90, 90, 90);
+  color: white;
+  font-weight: bold;
+  transition: 0.5s ease;
+}
+
+.logout > .logout-btn:hover {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  background-color: lightgreen;
+  color: green;
+}
+
+/* Responsive BreakPoints for Personal Image */
+/* Mobile */
+@media only screen and (min-width: 411px) and (min-height: 731px) {
+  .logout {
+    top: 4%;
+    right: 8%;
+  }
+  .logout > .logout-btn {
+    font-size: 12px;
+  }
+}
+/* Tablet */
+@media only screen and (min-width: 768px) and (min-height: 1024px) {
+  .logout {
+    right: 7%;
+  }
+}
+/* Laptop */
+@media only screen and (min-width: 1366px) and (min-height: 768px) {
+  .logout {
+    right: 3%;
+  }
+}
+/* Laptop */
+@media only screen and (min-width: 1920px) and (min-height: 1080px) {
+  .logout {
+    top: 5%;
+    right: 6%;
+  }
+  .logout > .logout-btn {
+    font-size: 14px;
+  }
+}

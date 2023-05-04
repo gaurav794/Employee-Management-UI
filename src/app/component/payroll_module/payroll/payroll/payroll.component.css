@@ -1,0 +1,167 @@
+.close-btn {
+  background: rgb(255, 66, 66);
+}
+
+.generate-btn {
+  background: rgb(65, 164, 29);
+}
+
+.clear-btn {
+  background: rgb(55, 183, 252);
+}
+
+#daily_wage,
+#generated_salary,
+#net_pay {
+  color: white;
+  cursor: not-allowed;
+  background: rgb(104 104 104);
+}
+
+/* Responsive BreakPoints*/
+/* Mobile */
+@media only screen and (min-width: 411px) and (min-height: 731px) {
+  .validation {
+    font-size: 14px;
+  }
+  .form-section {
+    margin-top: 5%;
+  }
+  .date-label {
+    font-size: 15px;
+    margin-bottom: 0;
+  }
+  .attendance-wage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .attendance-wage > div > input {
+    width: 100%;
+  }
+
+  form {
+    width: 75vw;
+  }
+  input,
+  textarea,
+  select {
+    padding: 8px;
+    font-size: 14px;
+  }
+  .btn {
+    margin-bottom: 8px;
+  }
+  .util-btn-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+/* Tablet */
+@media only screen and (min-width: 768px) and (min-height: 1024px) {
+  .validation {
+    font-size: 18px;
+  }
+  .date-label {
+    font-size: 18px;
+  }
+  input,
+  textarea,
+  select {
+    padding: 14px;
+    font-size: 18px;
+  }
+  .btn {
+    margin: 0;
+    padding: 0.5rem 4rem;
+    font-size: 15px;
+    font-weight: bolder;
+  }
+  .util-btn-container {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+/* Laptop */
+@media only screen and (min-width: 1366px) and (min-height: 768px) {
+  .validation {
+    font-size: 17px;
+  }
+  .form-section {
+    margin-top: 2rem;
+  }
+  form {
+    width: 35vw;
+  }
+  .date-label {
+    font-size: 18px;
+  }
+  .attendance-wage {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .attendance-wage > div {
+    width: 100%;
+  }
+
+  input,
+  textarea,
+  select {
+    padding: 6px;
+    font-size: 18px;
+  }
+  .btn {
+    margin: 0;
+    padding: 0.5rem 3rem;
+    font-size: 14px;
+    font-weight: bolder;
+  }
+  .util-btn-container {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+/* Laptop */
+@media only screen and (min-width: 1920px) and (min-height: 1080px) {
+  .form-section {
+    margin-top: 4rem;
+  }
+  form {
+    width: 40vw;
+  }
+  .date-label {
+    font-size: 20px;
+  }
+  .attendance-wage {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .attendance-wage > div {
+    width: 100%;
+  }
+  input,
+  textarea,
+  select {
+    padding: 12px;
+    font-size: 20px;
+  }
+  .btn {
+    margin: 0;
+    padding: 0.5rem 4rem;
+    font-size: 18px;
+    font-weight: bolder;
+  }
+  .util-btn-container {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

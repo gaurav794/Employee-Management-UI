@@ -1,0 +1,83 @@
+.employee-summary-back-btn {
+  margin-top: 2rem;
+  align-self: end;
+}
+.back-btn {
+  background: rgb(255, 66, 66);
+}
+
+th {
+  background: #4a4a4a;
+}
+
+td {
+  background: #3b3b3b;
+}
+
+/* Responsive BreakPoints for Personal Image */
+/* Mobile */
+@media only screen and (min-width: 411px) and (min-height: 731px) {
+  .table {
+    border-radius: 10px;
+    width: 75vw;
+    max-height: 60vh;
+  }
+
+  table {
+    height: 20vh;
+  }
+  .summary {
+    margin-top: 1rem;
+  }
+  .employee-summary-back-btn {
+    margin-right: 6%;
+  }
+}
+/* Tablet */
+@media only screen and (min-width: 768px) and (min-height: 1024px) {
+  .table {
+    border-radius: 10px;
+    width: 75vw;
+    max-height: 70vh;
+  }
+  .employee-summary-back-btn {
+    margin-right: 8%;
+  }
+}
+/* Laptop */
+@media only screen and (min-width: 1366px) and (min-height: 768px) {
+  .table {
+    border-radius: 10px;
+    width: 75vw;
+    max-height: 60vh;
+  }
+  table {
+    font-size: 15px;
+    height: 30vh;
+  }
+
+  .employee-summary-back-btn {
+    margin-right: 11%;
+  }
+  .employee-summary-back-btn > a {
+    font-size: 14px;
+  }
+}
+/* Laptop */
+@media only screen and (min-width: 1920px) and (min-height: 1080px) {
+  .table {
+    border-radius: 10px;
+    width: 75vw;
+    max-height: 70vh;
+  }
+  table {
+    font-size: 16px;
+    height: 40vh;
+  }
+  .summary {
+    margin-top: 1rem;
+  }
+  .employee-summary-back-btn {
+    margin-right: 10%;
+  }
+}

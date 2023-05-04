@@ -1,0 +1,162 @@
+<div class="payroll-main main">
+  <!-- Logout Button -->
+  <app-logout></app-logout>
+  <div class="payroll-head head">
+    <!-- Page Heading  -->
+    <app-page-heading [heading]="page_heading"></app-page-heading>
+  </div>
+  <div class="form-section">
+    <form class="form" (ngSubmit)="onGenerate()" [formGroup]="payrollForm">
+      <select id="payroll_month" formControlName="payroll_month">
+        <option value="" selected hidden>Select Month</option>
+        <option *ngFor="let month of months" value="{{ month }}">
+          {{ month }}
+        </option>
+      </select>
+      <div
+        class="validation"
+        *ngIf="
+          (payrollFormControl['payroll_month']?.invalid &&
+            payrollFormControl['payroll_month']?.touched) ||
+          payrollFormControl['payroll_month']?.dirty
+        "
+      >
+        <div *ngIf="payrollFormControl['payroll_month'].errors?.['required']">
+          Payroll Month is required
+        </div>
+      </div>
+      <input
+        id="payroll_year"
+        type="number"
+        placeholder="Year"
+        formControlName="payroll_year"
+      />
+      <div
+        class="validation"
+        *ngIf="
+          (payrollFormControl['payroll_year']?.invalid &&
+            payrollFormControl['payroll_year']?.touched) ||
+          payrollFormControl['payroll_year']?.dirty
+        "
+      >
+        <div *ngIf="payrollFormControl['payroll_year'].errors?.['required']">
+          Year is required
+        </div>
+      </div>
+      <select id="employee" formControlName="employee">
+        <option value="" selected hidden>Select Employee</option>
+        <option *ngFor="let employee of employees" value="{{ employee.pid }}">
+          {{ employee.pid + " - " + employee.name }}
+        </option>
+      </select>
+      <div
+        class="validation"
+        *ngIf="
+          (payrollFormControl['employee']?.invalid &&
+            payrollFormControl['employee']?.touched) ||
+          payrollFormControl['employee']?.dirty
+        "
+      >
+        <div *ngIf="payrollFormControl['employee'].errors?.['required']">
+          Employee is required
+        </div>
+      </div>
+      <div class="attendance-wage">
+        <div>
+          <input
+            id="attendance"
+            type="number"
+            min="0"
+            max="31"
+            placeholder="Attendance"
+            formControlName="attendance"
+          />
+          <div
+            class="validation"
+            *ngIf="
+              (payrollFormControl['attendance']?.invalid &&
+                payrollFormControl['attendance']?.touched) ||
+              payrollFormControl['attendance']?.dirty
+            "
+          >
+            <div *ngIf="payrollFormControl['attendance'].errors?.['required']">
+              Attendance is required
+            </div>
+            <div
+              *ngIf="
+                payrollFormControl['attendance']?.value < 0 ||
+                payrollFormControl['attendance']?.value > 31
+              "
+            >
+              Value must be between 0 and 31
+            </div>
+          </div>
+        </div>
+        <div>
+          <input
+            id="daily_wage"
+            type="number"
+            placeholder="Daily Wage"
+            formControlName="daily_wage"
+          />
+        </div>
+      </div>
+      <input
+        id="generated_salary"
+        type="text"
+        placeholder="Generated Salary"
+        formControlName="generated_salary"
+      />
+      <input
+        id="deductions"
+        type="number"
+        placeholder="Deductions"
+        formControlName="deductions"
+      />
+      <input
+        id="net_pay"
+        type="number"
+        placeholder="Net Pay"
+        formControlName="net_pay"
+      />
+      <select id="payment_mode" formControlName="payment_mode">
+        <option value="" selected hidden>Select Payment Mode</option>
+        <option *ngFor="let payment of modeOfPayment" value="{{ payment }}">
+          {{ payment }}
+        </option>
+      </select>
+      <div
+        class="validation"
+        *ngIf="
+          (payrollFormControl['payment_mode']?.invalid &&
+            payrollFormControl['payment_mode']?.touched) ||
+          payrollFormControl['payment_mode']?.dirty
+        "
+      >
+        <div *ngIf="payrollFormControl['payment_mode'].errors?.['required']">
+          Payment Mode is required
+        </div>
+      </div>
+      <label class="date-label" for="date_added">Today's Date:</label>
+      <input id="date_added" type="date" formControlName="date_added" />
+      <div
+        class="validation"
+        *ngIf="
+          (payrollFormControl['date_added']?.invalid &&
+            payrollFormControl['date_added']?.touched) ||
+          payrollFormControl['date_added']?.dirty
+        "
+      >
+        <div *ngIf="payrollFormControl['date_added'].errors?.['required']">
+          Date is required
+        </div>
+      </div>
+      <!-- buttons -->
+      <div class="util-btn-container">
+        <button class="btn generate-btn" type="submit">Generate</button>
+        <button class="btn clear-btn" type="reset">Clear</button>
+        <a class="btn close-btn" routerLink="/">Close</a>
+      </div>
+    </form>
+  </div>
+</div>
